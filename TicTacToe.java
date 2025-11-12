@@ -26,8 +26,8 @@ class TicTacToe {
         while (true) {
 
             try {
-                
-                //Permet de choisir sur quelle ligne et quelle colonne placer le symbole
+
+                // Permet de choisir sur quelle ligne et quelle colonne placer le symbole
                 System.out.println("Quelle ligne? (entre 0 et 2, + de 3 = fin de partie)");
                 int ligne = scan.nextInt();
                 if (ligne > 2) {
@@ -48,8 +48,8 @@ class TicTacToe {
                 display();
                 symbol = symbol == 'x' ? 'o' : 'x';
 
-                //Parcours horizontal
-                for (int i = 0; i < board.length; i++) { 
+                // Parcours horizontal
+                for (int i = 0; i < board.length; i++) {
                     if (board[i][0] == 'x' && board[i][1] == 'x' && board[i][2] == 'x') {
                         System.out.println(playerX + " à battu " + playerO);
                         mustEnd = true;
@@ -59,9 +59,9 @@ class TicTacToe {
                     }
                 }
 
-                //Parcours vertical
-                for (int j = 0; j < board.length; j++) { 
-                    if (board[0][j] == 'x' && board[1][j] == 'x' && board[2][j] == 'x') { 
+                // Parcours vertical
+                for (int j = 0; j < board.length; j++) {
+                    if (board[0][j] == 'x' && board[1][j] == 'x' && board[2][j] == 'x') {
                         System.out.println(playerX + " à battu " + playerO);
                         mustEnd = true;
                     } else if (board[0][j] == 'o' && board[1][j] == 'o' && board[2][j] == 'o') {
@@ -70,8 +70,8 @@ class TicTacToe {
                     }
                 }
 
-                //Parcours diagonal de gauche à droite
-                if (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') { 
+                // Parcours diagonal de gauche à droite
+                if (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') {
                     System.out.println(playerX + " à battu " + playerO);
                     mustEnd = true;
                 } else if (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o') {
@@ -79,8 +79,8 @@ class TicTacToe {
                     mustEnd = true;
                 }
 
-                //Parcours diagonal de droite à gauche
-                if (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') { 
+                // Parcours diagonal de droite à gauche
+                if (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') {
                     System.out.println(playerX + " à battu " + playerO);
                     mustEnd = true;
                 } else if (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o') {
@@ -97,26 +97,10 @@ class TicTacToe {
         }
     }
 
-    public static Scanner scan = new Scanner(System.in); // equivalent input
+    public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] params) {
         play();
         display();
-
-        // System.out.println("Hello World !"); // equivalent console.log en js
-
-        // System.out.println("Quel est votre age?");
-        // while (true) {
-        // try {
-        // int age = scan.nextInt();
-        // System.out.println("Votre age est : " + age);
-        // break;
-        // } catch (Exception e) {
-        // System.out.println("Un nombre");
-        // scan.nextLine();
-        // }
     }
-    // scan.close();
-
-    // readline() ou scanner (import java.util.Scanner)
 }
