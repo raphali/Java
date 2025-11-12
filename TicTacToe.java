@@ -21,6 +21,7 @@ class TicTacToe {
         String playerX = scan.nextLine();
         System.out.println("Pseudo du joueur o : ");
         String playerO = scan.nextLine();
+        int round=0;
         display();
         boolean mustEnd = false;
         while (true) {
@@ -47,6 +48,7 @@ class TicTacToe {
                 board[ligne][colonne] = symbol;
                 display();
                 symbol = symbol == 'x' ? 'o' : 'x';
+                round+=1;
 
                 // Parcours horizontal
                 for (int i = 0; i < board.length; i++) {
@@ -88,6 +90,10 @@ class TicTacToe {
                     mustEnd = true;
                 }
                 if (mustEnd == true) {
+                    break;
+                }
+                if (round==9) {
+                    System.out.println("Égalité !");
                     break;
                 }
             } catch (Exception e) {

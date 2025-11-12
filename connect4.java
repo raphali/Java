@@ -16,7 +16,7 @@ class connect4 {
     public static char symbol = 'x';
 
     public static void display() {
-        for (char[] eachLine : board) { 
+        for (char[] eachLine : board) {
             System.out.println(eachLine);
         }
     }
@@ -26,6 +26,7 @@ class connect4 {
         String playerX = scan.nextLine();
         System.out.println("Pseudo du joueur jaune : ");
         String playerO = scan.nextLine();
+        int round = 0;
         display();
         boolean mustEnd = false;
         while (true) {
@@ -49,6 +50,7 @@ class connect4 {
                     }
                 }
                 symbol = symbol == 'x' ? 'o' : 'x';
+                round += 1;
 
                 // Parcours horizontal if win
                 for (int i = 0; i < board.length; i++) {
@@ -81,6 +83,10 @@ class connect4 {
                     }
                 }
                 if (mustEnd == true) {
+                    break;
+                }
+                if (round == 42) {
+                    System.out.println("Égalité !");
                     break;
                 }
             } catch (Exception e) {
